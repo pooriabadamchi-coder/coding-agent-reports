@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="فروشگاه کفش ورزشی مردانه">
+  <title>گام‌نو | کفش ورزشی مردانه</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="#top" aria-label="صفحه اصلی گام‌نو">
+        <span class="brand-mark">گ</span>
+        <span><strong>گام‌نو</strong><small>کفش ورزشی مردانه</small></span>
+      </a>
+      <div class="header-actions">
+        <label class="search-box" for="searchInput">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="جست‌وجوی کفش..." autocomplete="off">
+        </label>
+        <button class="cart-button" id="openCartButton" type="button" aria-label="باز کردن سبد خرید">
+          <span aria-hidden="true">🛒</span>
+          <span>سبد خرید</span>
+          <b id="cartCount">۰</b>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div>
+        <span class="eyebrow">حرکت، سبک زندگی ماست</span>
+        <h1 id="heroTitle">برای هر قدم،<br><em>یک انتخاب حرفه‌ای</em></h1>
+        <p>مجموعه‌ای از کفش‌های ورزشی مردانه با طراحی مدرن، راحتی ماندگار و امکان خرید نقدی یا اعتباری.</p>
+        <a class="primary-button hero-link" href="#products">مشاهده محصولات <span>←</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <span class="hero-circle"></span>
+        <span class="hero-shoe">👟</span>
+        <span class="hero-label">RUN<br><small>EVERY DAY</small></span>
+      </div>
+    </section>
+
+    <section class="toolbar" aria-label="فیلتر محصولات">
+      <div>
+        <h2 id="products">محصولات منتخب</h2>
+        <p id="resultText">در حال نمایش محصولات</p>
+      </div>
+      <div class="filters">
+        <label>سایز
+          <select id="sizeFilter">
+            <option value="all">همه سایزها</option>
+            <option value="40">۴۰</option><option value="41">۴۱</option><option value="42">۴۲</option>
+            <option value="43">۴۳</option><option value="44">۴۴</option><option value="45">۴۵</option>
+          </select>
+        </label>
+        <label>مرتب‌سازی
+          <select id="sortFilter">
+            <option value="featured">پیشنهاد گام‌نو</option>
+            <option value="low">ارزان‌ترین</option>
+            <option value="high">گران‌ترین</option>
+            <option value="stock">موجودی بیشتر</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section id="productGrid" class="product-grid" aria-live="polite"></section>
+    <div id="emptyProducts" class="empty-state hidden">
+      <span>⌕</span><h3>محصولی پیدا نشد</h3><p>عبارت جست‌وجو یا فیلتر سایز را تغییر دهید.</p>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <div id="productModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <button class="close-button" type="button" data-close-modal aria-label="بستن">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <aside id="cartDrawer" class="cart-drawer" aria-labelledby="cartTitle">
+    <div class="drawer-header"><div><span class="eyebrow">خرید شما</span><h2 id="cartTitle">سبد خرید</h2></div><button class="close-button" id="closeCartButton" type="button" aria-label="بستن سبد">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div id="cartFooter" class="cart-footer">
+      <div class="purchase-type"><strong>نوع خرید</strong><div class="purchase-options"><label><input type="radio" name="purchaseType" value="cash" checked> نقدی</label><label><input type="radio" name="purchaseType" value="credit"> اعتباری</label></div></div>
+      <div class="total-row"><span>مبلغ قابل پرداخت</span><strong id="cartTotal">۰ تومان</strong></div>
+      <p id="creditNote" class="credit-note hidden">خرید اعتباری نمایشی است و شامل ۴ قسط ماهانه می‌شود.</p>
+      <button class="primary-button checkout-button" type="button" id="checkoutButton">ادامه و ثبت درخواست</button>
+      <small class="demo-note">این نسخه نمایشی است؛ پرداخت آنلاین انجام نمی‌شود.</small>
+    </div>
+  </aside>
+  <div id="drawerBackdrop" class="drawer-backdrop hidden"></div>
+  <script src="app.js"></script>
+</body>
+</html>
