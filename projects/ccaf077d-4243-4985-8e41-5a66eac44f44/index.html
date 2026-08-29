@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="فروشگاه کفش ورزشی مردانه آدیداس و نایک">
+  <title>تندپا | کفش ورزشی مردانه</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="صفحه اصلی تندپا">
+        <span class="brand-mark">⚡</span>
+        <span><strong>تندپا</strong><small>کفش ورزشی مردانه</small></span>
+      </a>
+      <div class="search-wrap">
+        <label for="search" class="sr-only">جست‌وجوی محصول</label>
+        <input id="search" type="search" placeholder="جست‌وجو در نام یا برند..." autocomplete="off">
+        <span>⌕</span>
+      </div>
+      <button id="cart-button" class="cart-button" type="button" aria-controls="cart-drawer" aria-expanded="false">
+        <span>سبد خرید</span><b id="cart-count">۰</b>
+      </button>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <span class="eyebrow">مجموعه جدید ۱۴۰۳</span>
+        <h1 id="hero-title">هر قدم، <em>سریع‌تر</em> از قبل</h1>
+        <p>کفش‌های ورزشی حرفه‌ای آدیداس و نایک، برای تمرین‌های روزانه و مسیرهای طولانی.</p>
+        <a class="hero-link" href="#products">مشاهده محصولات <span>←</span></a>
+      </div>
+      <div class="hero-shoe" aria-hidden="true"><div class="hero-circle"></div><div class="shoe-shape">⌁</div></div>
+    </section>
+
+    <section class="toolbar" aria-label="فیلتر و مرتب‌سازی محصولات">
+      <div class="filter-group">
+        <label for="brand-filter">برند</label>
+        <select id="brand-filter"><option value="all">همه برندها</option><option value="آدیداس">آدیداس</option><option value="نایک">نایک</option></select>
+      </div>
+      <div class="filter-group">
+        <label for="size-filter">سایز</label>
+        <select id="size-filter"><option value="all">همه سایزها</option><option value="40">۴۰</option><option value="41">۴۱</option><option value="42">۴۲</option><option value="43">۴۳</option><option value="44">۴۴</option><option value="45">۴۵</option></select>
+      </div>
+      <div class="filter-group">
+        <label for="price-filter">بازه قیمت</label>
+        <select id="price-filter"><option value="all">همه قیمت‌ها</option><option value="under-3">زیر ۳ میلیون</option><option value="3-5">۳ تا ۵ میلیون</option><option value="over-5">بیشتر از ۵ میلیون</option></select>
+      </div>
+      <div class="filter-group sort-group">
+        <label for="sort">مرتب‌سازی</label>
+        <select id="sort"><option value="popular">محبوب‌ترین</option><option value="price-low">ارزان‌ترین</option><option value="price-high">گران‌ترین</option><option value="stock">بیشترین موجودی</option></select>
+      </div>
+    </section>
+
+    <div class="section-heading"><div><span class="eyebrow">انتخاب هوشمند</span><h2 id="products">محصولات منتخب</h2></div><span id="result-count" class="result-count"></span></div>
+    <section id="product-grid" class="product-grid" aria-live="polite"></section>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button id="modal-close" class="icon-button close-button" type="button" aria-label="بستن">×</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+  <aside id="cart-drawer" class="cart-drawer" aria-label="سبد خرید" aria-hidden="true">
+    <div class="drawer-head"><h2>سبد خرید شما</h2><button id="drawer-close" class="icon-button" type="button" aria-label="بستن سبد خرید">×</button></div>
+    <div id="cart-items" class="cart-items"></div>
+    <div id="cart-summary" class="cart-summary"></div>
+  </aside>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
