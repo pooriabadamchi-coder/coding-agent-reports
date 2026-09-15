@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="فروشگاه اینترنتی کفش ورزشی مردانه">
+  <title>تندر | کفش ورزشی مردانه</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#products" aria-label="صفحه اصلی تندر">
+        <span class="brand-mark">ت</span>
+        <span>تندر</span>
+      </a>
+      <div class="header-actions">
+        <label class="search-box" for="searchInput">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="جست‌وجوی برند یا نام کفش" autocomplete="off">
+        </label>
+        <button class="cart-button" id="cartButton" type="button" aria-label="باز کردن سبد خرید">
+          <span aria-hidden="true">🛒</span> سبد خرید <b id="cartCount">۰</b>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div>
+        <p class="eyebrow">برای حرکت بیشتر</p>
+        <h1 id="heroTitle">قدم‌های قوی‌تر،<br><span>عملکرد بهتر</span></h1>
+        <p>کفش‌های ورزشی مردانه با طراحی حرفه‌ای، انتخاب سایز دقیق و ارسال سریع.</p>
+        <a class="primary-button" href="#products">مشاهده محصولات</a>
+      </div>
+      <div class="hero-shoe" aria-hidden="true">👟</div>
+    </section>
+
+    <section class="catalog" id="products" aria-labelledby="catalogTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">انتخاب شما</p>
+          <h2 id="catalogTitle">کفش‌های محبوب</h2>
+        </div>
+        <div class="filters">
+          <select id="brandFilter" aria-label="فیلتر بر اساس برند">
+            <option value="all">همه برندها</option>
+          </select>
+          <select id="sizeFilter" aria-label="فیلتر بر اساس سایز">
+            <option value="all">همه سایزها</option>
+          </select>
+          <select id="sortSelect" aria-label="مرتب‌سازی محصولات">
+            <option value="featured">پیشنهاد ویژه</option>
+            <option value="priceAsc">ارزان‌ترین</option>
+            <option value="priceDesc">گران‌ترین</option>
+            <option value="name">نام محصول</option>
+            <option value="stock">بیشترین موجودی</option>
+          </select>
+        </div>
+      </div>
+      <div id="productsGrid" class="products-grid"></div>
+      <div id="emptyProducts" class="empty-state hidden">
+        <span>🔎</span><h3>محصولی پیدا نشد</h3><p>عبارت جست‌وجو یا فیلترها را تغییر دهید.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="productModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card product-modal-card">
+      <button class="close-button" id="closeModal" type="button" aria-label="بستن">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <aside id="cartDrawer" class="cart-drawer" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="drawer-header"><h2 id="cartTitle">سبد خرید</h2><button class="close-button" id="closeCart" type="button" aria-label="بستن سبد">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div id="cartEmpty" class="empty-state"><span>🛍️</span><h3>سبد شما خالی است</h3><p>محصولات مورد علاقه‌تان را به سبد اضافه کنید.</p></div>
+    <div id="cartFooter" class="cart-footer hidden">
+      <div class="total-row"><span>جمع کل</span><strong id="cartTotal">۰ تومان</strong></div>
+      <button class="primary-button full-width" id="checkoutButton" type="button">ادامه و ثبت سفارش</button>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay hidden"></div>
+
+  <div id="checkoutModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="modal-card checkout-card">
+      <button class="close-button" id="closeCheckout" type="button" aria-label="بستن">×</button>
+      <h2 id="checkoutTitle">نهایی‌سازی سفارش</h2>
+      <p class="muted">اطلاعات زیر فقط برای ثبت نمایشی سفارش استفاده می‌شود.</p>
+      <form id="checkoutForm">
+        <label>نام و نام خانوادگی<input name="name" required minlength="۲" placeholder="مثلاً علی رضایی"></label>
+        <label>شماره تماس<input name="phone" required pattern="^۰?۹\d{9}$|^09\d{9}$" placeholder="۰۹۱۲۱۲۳۴۵۶۷" inputmode="tel"></label>
+        <label>نشانی ارسال<textarea name="address" required minlength="۱۰" rows="3" placeholder="نشانی کامل خود را وارد کنید"></textarea></label>
+        <fieldset><legend>روش پرداخت</legend>
+          <label class="payment-option"><input type="radio" name="payment" value="cash" checked><span><b>پرداخت نقدی</b><small>پرداخت کامل هنگام ثبت سفارش</small></span></label>
+          <label class="payment-option"><input type="radio" name="payment" value="credit"><span><b>خرید اعتباری</b><small id="installmentText">پرداخت در ۴ قسط مساوی</small></span></label>
+        </fieldset>
+        <button class="primary-button full-width" type="submit">ثبت نمایشی سفارش</button>
+      </form>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
