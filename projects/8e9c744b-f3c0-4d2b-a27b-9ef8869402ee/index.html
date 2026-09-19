@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="فروشگاه کفش ورزشی مردانه آدیداس و نایک">
+  <title>کیک‌استور | کفش ورزشی مردانه</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top">کیک‌استور<span>●</span></a>
+      <label class="search-wrap" for="search">
+        <span aria-hidden="true">⌕</span>
+        <input id="search" type="search" placeholder="جست‌وجوی محصول یا برند..." autocomplete="off">
+      </label>
+      <button class="cart-button" id="open-cart" type="button" aria-label="باز کردن سبد خرید">
+        سبد خرید <b id="cart-count">۰</b>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div>
+        <p class="eyebrow">حرکت کن، بهتر شو</p>
+        <h1>کفش مناسب،<br><em>هر قدم قوی‌تر</em></h1>
+        <p class="hero-copy">انتخابی مطمئن از کفش‌های ورزشی مردانه آدیداس و نایک؛ برای تمرین، دویدن و زندگی روزمره.</p>
+        <a class="primary-link" href="#products">مشاهده محصولات <span>←</span></a>
+      </div>
+      <div class="hero-art" aria-label="تصویرسازی کفش ورزشی" role="img"><span>RUN<br>FREE</span><div class="shoe-shape"></div></div>
+    </section>
+
+    <section class="container catalog" id="products">
+      <div class="section-heading">
+        <div><p class="eyebrow">انتخاب شما</p><h2>محصولات منتخب</h2></div>
+        <label class="sort-label" for="sort">مرتب‌سازی:
+          <select id="sort"><option value="popular">محبوب‌ترین</option><option value="newest">جدیدترین</option><option value="low">ارزان‌ترین</option><option value="high">گران‌ترین</option></select>
+        </label>
+      </div>
+      <div class="filters" role="group" aria-label="فیلتر برند">
+        <button class="filter active" data-brand="all" type="button">همه</button>
+        <button class="filter" data-brand="آدیداس" type="button">آدیداس</button>
+        <button class="filter" data-brand="نایک" type="button">نایک</button>
+      </div>
+      <div id="product-grid" class="product-grid"></div>
+      <p id="empty-products" class="empty hidden">محصولی با این مشخصات پیدا نشد.</p>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="backdrop hidden" id="backdrop"></div>
+  <aside class="drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="drawer-head"><h2 id="cart-title">سبد خرید</h2><button class="close" id="close-cart" type="button" aria-label="بستن">×</button></div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="total-line"><span>جمع کل</span><strong id="cart-total">۰ تومان</strong></div>
+      <div class="payment-options"><label><input type="radio" name="payment" value="cash" checked> خرید نقدی</label><label><input type="radio" name="payment" value="credit"> خرید اعتباری (۴ قسط)</label></div>
+      <p class="installment hidden" id="installment"></p>
+      <button id="checkout" class="checkout" type="button">ثبت سفارش نمایشی</button>
+      <small>این سفارش واقعی نیست و فقط برای نمایش عملکرد فروشگاه است.</small>
+    </div>
+  </aside>
+
+  <dialog id="product-dialog"><button class="close dialog-close" id="close-dialog" type="button" aria-label="بستن">×</button><div id="dialog-content"></div></dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
