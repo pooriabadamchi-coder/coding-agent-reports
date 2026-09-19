@@ -1,0 +1,9 @@
+{
+  "name": "northstar-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A small static portfolio website for Northstar Studio.",
+  "scripts": {
+    "test": "node --test tests/site.test.js"
+  }
+}
