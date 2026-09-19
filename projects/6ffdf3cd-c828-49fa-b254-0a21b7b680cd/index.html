@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Studio is a digital product company creating clear, useful, and memorable digital experiences.">
+  <title>Northstar Studio — Digital products with purpose</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Northstar Studio home">
+        <span class="brand-mark">✦</span>
+        <span>Northstar<span class="brand-dot">.</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-cta">Start a project <span>↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> Independent digital studio</p>
+        <h1>We make complex ideas feel <em>simple.</em></h1>
+        <p class="hero-text">Northstar is a strategy and design company helping ambitious teams turn bold ideas into products people love to use.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Explore our work <span>↗</span></a>
+          <a class="text-link" href="#contact">Tell us your idea <span>→</span></a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Abstract blue and orange geometric artwork">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="orb orb-blue"></div>
+        <div class="orb orb-orange"></div>
+        <div class="orb orb-light"></div>
+        <span class="art-label label-top">Strategy</span>
+        <span class="art-label label-bottom">Design / Build</span>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Selected clients">
+      <div class="container trust-inner">
+        <span>Trusted by teams at</span>
+        <strong>arc<span>°</span></strong><strong>MONO</strong><strong class="serif">Lumen</strong><strong>vertex<span class="brand-dot">.</span></strong><strong class="wide">NORTH / EAST</strong>
+      </div>
+    </section>
+
+    <section id="work" class="section container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Selected work</p><h2>Ideas made <em>real.</em></h2></div>
+        <p class="section-intro">A few ways we have helped teams find clarity, create momentum, and make a lasting impression.</p>
+      </div>
+      <div class="work-grid">
+        <article class="project project-large">
+          <div class="project-image image-cascade"><span class="project-badge">01 / Product</span><div class="cascade-card card-back"></div><div class="cascade-card card-mid"></div><div class="cascade-card card-front"><span>flow</span><small>Move work forward.</small></div></div>
+          <div class="project-meta"><div><h3>Flowline</h3><p>Making operations feel effortless.</p></div><span class="arrow">↗</span></div>
+        </article>
+        <article class="project">
+          <div class="project-image image-ember"><span class="project-badge">02 / Brand</span><div class="ember-word">ember</div><div class="ember-line"></div></div>
+          <div class="project-meta"><div><h3>Ember Health</h3><p>A warmer future for care.</p></div><span class="arrow">↗</span></div>
+        </article>
+        <article class="project">
+          <div class="project-image image-matter"><span class="project-badge">03 / Digital</span><div class="matter-shape">M</div><div class="matter-copy">Materials<br>for tomorrow</div></div>
+          <div class="project-meta"><div><h3>Material Matter</h3><p>Building a more circular world.</p></div><span class="arrow">↗</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="services" class="dark-section">
+      <div class="container services-grid">
+        <div><p class="eyebrow light">What we do</p><h2>From first thought<br>to <em>full flight.</em></h2></div>
+        <div class="service-list">
+          <div class="service-item"><span>01</span><div><h3>Strategy & positioning</h3><p>Finding the sharpest version of your story and the clearest path forward.</p></div><b>↗</b></div>
+          <div class="service-item"><span>02</span><div><h3>Brand identity</h3><p>Building distinctive identities that are as useful as they are beautiful.</p></div><b>↗</b></div>
+          <div class="service-item"><span>03</span><div><h3>Digital experiences</h3><p>Designing and launching digital products that work hard and feel effortless.</p></div><b>↗</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section container">
+      <div class="about-number">24<span>+</span></div>
+      <div class="about-copy"><p class="eyebrow">A little about us</p><h2>Small team.<br><em>Big energy.</em></h2><p>We are a close-knit collective of strategists, designers, and builders based between Amsterdam and everywhere. We work best with people who care deeply about what they are making.</p><a class="text-link" href="#contact">Meet the studio <span>→</span></a></div>
+      <div class="about-note"><span>Our north star</span><strong>Make useful<br>things matter.</strong></div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container contact-inner">
+        <p class="eyebrow">Have a good one?</p><h2>Let's make<br>something <em>matter.</em></h2>
+        <form id="contact-form" class="contact-form" novalidate>
+          <label for="email">Your email address</label>
+          <div class="input-row"><input id="email" name="email" type="email" placeholder="you@company.com" required><button class="button button-primary" type="submit">Get in touch <span>↗</span></button></div>
+          <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner"><a class="brand" href="#top"><span class="brand-mark">✦</span><span>Northstar<span class="brand-dot">.</span></span></a><p>© 2024 Northstar Studio. Made with intent.</p><div class="socials"><a href="#contact">Instagram</a><a href="#contact">LinkedIn</a></div></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
