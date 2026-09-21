@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کفشینو | کفش ورزشی مردانه</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="logo" href="#">کفشینو<span>+</span></a>
+      <p class="tagline">قدم‌های قوی‌تر، انتخاب بهتر</p>
+      <button id="cart-toggle" class="cart-button" type="button">سبد خرید <b id="cart-count">۰</b></button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">کفش ورزشی مردانه</p>
+        <h1>برای هر قدم، یک انتخاب حرفه‌ای</h1>
+        <p>جدیدترین مدل‌های آدیداس و نایک با امکان خرید نقدی و اعتباری.</p>
+      </div>
+      <div class="hero-shoe" aria-hidden="true">👟</div>
+    </section>
+
+    <section class="toolbar" aria-label="جست‌وجو و فیلتر محصولات">
+      <label class="search"><span>⌕</span><input id="search" type="search" placeholder="جست‌وجوی نام یا برند..." aria-label="جست‌وجوی محصول"></label>
+      <select id="brand-filter" aria-label="فیلتر برند">
+        <option value="all">همه برندها</option><option value="آدیداس">آدیداس</option><option value="نایک">نایک</option>
+      </select>
+      <select id="stock-filter" aria-label="فیلتر موجودی">
+        <option value="all">همه محصولات</option><option value="available">موجود</option><option value="unavailable">ناموجود</option>
+      </select>
+      <select id="sort" aria-label="مرتب‌سازی">
+        <option value="popular">محبوب‌ترین</option><option value="low">ارزان‌ترین</option><option value="high">گران‌ترین</option>
+      </select>
+    </section>
+
+    <section class="section-heading"><h2>محصولات منتخب</h2><span id="result-count"></span></section>
+    <section id="products" class="product-grid" aria-live="polite"></section>
+  </main>
+
+  <div id="cart-overlay" class="overlay hidden"></div>
+  <aside id="cart-panel" class="cart-panel" aria-label="سبد خرید">
+    <div class="panel-head"><h2>سبد خرید</h2><button id="cart-close" class="icon-button" type="button" aria-label="بستن">×</button></div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="total-row"><span>مبلغ کل</span><strong id="cart-total">۰ تومان</strong></div>
+      <button id="checkout" class="primary full" type="button">ادامه و ثبت سفارش</button>
+    </div>
+  </aside>
+
+  <dialog id="checkout-dialog">
+    <button id="dialog-close" class="dialog-close" type="button" aria-label="بستن">×</button>
+    <h2>ثبت سفارش نمایشی</h2>
+    <p class="muted">روش پرداخت خود را انتخاب کنید. این فروشگاه به درگاه بانکی متصل نیست.</p>
+    <div class="payment-options">
+      <label><input type="radio" name="payment" value="cash" checked> پرداخت نقدی <b id="cash-price"></b></label>
+      <label><input type="radio" name="payment" value="credit"> خرید اعتباری چهار قسطه <b id="credit-price"></b></label>
+    </div>
+    <p id="installment-info" class="installment-info"></p>
+    <button id="confirm-order" class="primary full" type="button">تأیید سفارش</button>
+  </dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
