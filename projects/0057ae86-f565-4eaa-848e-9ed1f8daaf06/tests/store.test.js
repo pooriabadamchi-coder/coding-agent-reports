@@ -1,0 +1,12 @@
+const assert=require('node:assert/strict');
+const {PRODUCTS,productStock,addToCart,changeQuantity,cartTotal,installments}=require('../app.js');
+assert.equal(PRODUCTS.every(p=>['آدیداس','نایک'].includes(p.brand)),true);
+assert.equal(PRODUCTS.length,6);
+assert.equal(PRODUCTS.filter(p=>p.brand==='آدیداس').length,3);
+assert.equal(productStock(PRODUCTS[0]),10);
+let cart=[];let result=addToCart(cart,PRODUCTS[0].id,41,2);assert.equal(result.error,null);assert.equal(cart[0].quantity,2);
+result=addToCart(cart,PRODUCTS[0].id,41,1);assert.equal(cart.length,1);assert.equal(cart[0].quantity,3);
+assert.ok(addToCart(cart,PRODUCTS[0].id,41,2).error);assert.ok(addToCart(cart,PRODUCTS[0].id,99,1).error);assert.equal(addToCart([],PRODUCTS[0].id,40,1).cart.length,1);
+assert.equal(cartTotal(cart),PRODUCTS[0].price*3);assert.deepEqual(installments(1000),[250,250,250,250]);assert.deepEqual(installments(1001),[250,250,250,251]);
+cart=changeQuantity(cart,cart[0].key,-2);assert.equal(cart[0].quantity,1);cart=changeQuantity(cart,cart[0].key,-1);assert.equal(cart.length,0);
+console.log('تمام تست‌های منطق فروشگاه با موفقیت اجرا شدند.');process.exit(0);
