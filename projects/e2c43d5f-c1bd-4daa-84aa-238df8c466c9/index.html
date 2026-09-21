@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="فروشگاه اینترنتی کفش ورزشی مردانه آدیداس و نایک">
+  <title>کفشینو | کفش ورزشی مردانه</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#top" aria-label="صفحه اصلی کفشینو">
+        <span class="logo-mark">K</span>
+        <span>کفشینو</span>
+      </a>
+      <nav class="main-nav" aria-label="ناوبری اصلی">
+        <a href="#products">محصولات</a>
+        <a href="#about">درباره ما</a>
+      </nav>
+      <button class="cart-button" id="openCart" type="button" aria-label="باز کردن سبد خرید">
+        <span aria-hidden="true">🛒</span>
+        <span>سبد خرید</span>
+        <b id="cartCount">۰</b>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">حرکت کن، متفاوت باش</span>
+        <h1>قدم‌های بزرگ با <strong>انتخاب درست</strong></h1>
+        <p>مجموعه‌ای از بهترین کفش‌های ورزشی مردانه آدیداس و نایک برای تمرین، دویدن و استفاده روزمره.</p>
+        <a class="primary-button" href="#products">مشاهده محصولات <span>←</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-circle"></div>
+        <div class="art-shoe">👟</div>
+        <span class="art-label">RUN<br>YOUR<br>WAY</span>
+      </div>
+    </section>
+
+    <section class="shop-section" id="products">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">انتخابی برای هر سبک</span>
+          <h2>محصولات محبوب</h2>
+        </div>
+        <span class="result-count" id="resultCount"></span>
+      </div>
+      <div class="toolbar" aria-label="ابزارهای جست‌وجو و مرتب‌سازی">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <span class="sr-only">جست‌وجوی محصول</span>
+          <input id="searchInput" type="search" placeholder="جست‌وجوی نام کفش..." autocomplete="off">
+        </label>
+        <div class="filters" role="group" aria-label="فیلتر برند">
+          <button class="filter-button active" data-brand="all" type="button">همه</button>
+          <button class="filter-button" data-brand="adidas" type="button">آدیداس</button>
+          <button class="filter-button" data-brand="nike" type="button">نایک</button>
+        </div>
+        <label class="sort-box">
+          <span>مرتب‌سازی:</span>
+          <select id="sortSelect" aria-label="مرتب‌سازی محصولات">
+            <option value="featured">پیشنهادی</option>
+            <option value="priceAsc">ارزان‌ترین</option>
+            <option value="priceDesc">گران‌ترین</option>
+            <option value="name">نام محصول</option>
+          </select>
+        </label>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+      <div class="empty-state hidden" id="emptyState">
+        <div class="empty-icon">🔎</div>
+        <h3>محصولی پیدا نشد</h3>
+        <p>عبارت جست‌وجو یا فیلتر برند را تغییر دهید.</p>
+      </div>
+    </section>
+
+    <section class="features" id="about">
+      <div class="feature"><span>✓</span><div><strong>اصالت کالا</strong><small>انتخابی مطمئن برای شما</small></div></div>
+      <div class="feature"><span>↻</span><div><strong>۷ روز ضمانت بازگشت</strong><small>خریدی بدون نگرانی</small></div></div>
+      <div class="feature"><span>▣</span><div><strong>پرداخت اعتباری</strong><small>پرداخت در ۴ قسط</small></div></div>
+      <div class="feature"><span>⌁</span><div><strong>ارسال سریع</strong><small>به سراسر ایران</small></div></div>
+    </section>
+  </main>
+
+  <div class="overlay hidden" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="drawer-header">
+      <div><span class="eyebrow">خرید شما</span><h2 id="cartTitle">سبد خرید</h2></div>
+      <button class="close-button" id="closeCart" type="button" aria-label="بستن سبد خرید">×</button>
+    </div>
+    <div class="cart-content" id="cartContent"></div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="total-row"><span>جمع کل</span><strong id="cartTotal">۰ تومان</strong></div>
+      <div class="payment-options">
+        <label class="payment-option selected"><input type="radio" name="payment" value="cash" checked><span><b>پرداخت نقدی</b><small>پرداخت کامل مبلغ</small></span></label>
+        <label class="payment-option"><input type="radio" name="payment" value="credit"><span><b>خرید اعتباری</b><small id="installmentText">۴ قسط بدون سود</small></span></label>
+      </div>
+      <button class="checkout-button" id="checkoutButton" type="button">ادامه و پرداخت <span>←</span></button>
+      <p class="demo-note">پرداخت در این نسخه نمایشی است و تراکنش واقعی انجام نمی‌شود.</p>
+    </div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
