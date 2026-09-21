@@ -1,0 +1,9 @@
+const test=require('node:test');const assert=require('node:assert/strict');const {products,filterProducts,cartTotal,installment,addToCart,changeCart}=require('../app.js');
+test('محصولات فقط از برندهای آدیداس و نایک هستند',()=>{assert.equal(products.length,8);assert.ok(products.every(p=>['آدیداس','نایک'].includes(p.brand)));});
+test('جست‌وجو و فیلتر برند',()=>{assert.equal(filterProducts(products,{search:'نایک'}).length,4);assert.ok(filterProducts(products,{brand:'آدیداس'}).every(p=>p.brand==='آدیداس'));});
+test('فیلتر ناموجود',()=>{let list=products.map(p=>({...p,sizes:Object.fromEntries(Object.keys(p.sizes).map(s=>[s,0]))}));assert.equal(filterProducts(list,{stock:'unavailable'}).length,8);});
+test('انتخاب سایز الزامی و سقف موجودی رعایت می‌شود',()=>{let p=products[0],inv={ [p.id]:{...p.sizes}},cart=[];assert.equal(addToCart(cart,p,null,inv).ok,false);assert.equal(addToCart(cart,p,'40',inv).ok,true);assert.equal(addToCart(cart,p,'40',inv).ok,true);assert.equal(addToCart(cart,p,'40',inv).ok,false);assert.equal(cart[0].quantity,2);});
+test('افزایش، کاهش و حذف اقلام سبد',()=>{let p=products[1],inv={[p.id]:{...p.sizes}},cart=[];addToCart(cart,p,'40',inv);assert.equal(changeCart(cart,inv,cart[0].key,1),true);assert.equal(cart[0].quantity,2);changeCart(cart,inv,cart[0].key,-1);assert.equal(cart[0].quantity,1);changeCart(cart,inv,cart[0].key,-1);assert.equal(cart.length,0);});
+test('محاسبه مبلغ کل و قسط',()=>{let c=[{price:400,quantity:2},{price:150,quantity:1}];assert.equal(cartTotal(c),950);assert.equal(installment(950),238);});
+test('ذخیره و بازیابی سبد با JSON سازگار است',()=>{let c=[{key:'a-40',quantity:2}];assert.deepEqual(JSON.parse(JSON.stringify(c)),c);});
+test('ثبت سفارش با پاک‌سازی سبد قابل انجام است',()=>{let c=[{price:100,quantity:1}];c=[];assert.equal(c.length,0);});
