@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پاورکفش | فروشگاه کفش ورزشی</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="صفحه اصلی پاورکفش"><span class="brand-mark">👟</span><span>پاورکفش</span></a>
+      <div class="search-box"><label for="search">جست‌وجوی کفش</label><input id="search" type="search" placeholder="نام محصول یا برند را جست‌وجو کنید"></div>
+      <button id="cart-button" class="cart-button" type="button" aria-label="باز کردن سبد خرید">سبد خرید <span id="cart-count" class="badge">۰</span></button>
+    </div>
+  </header>
+  <main id="top" class="container">
+    <section class="hero" aria-labelledby="hero-title"><div><p class="eyebrow">استایل، سرعت، اعتماد</p><h1 id="hero-title">کفش ورزشی مردانه برای هر قدم</h1><p>منتخب بهترین مدل‌های آدیداس و نایک با امکان خرید نقدی یا اعتباری.</p></div><div class="hero-shoe" aria-hidden="true">👟</div></section>
+    <section class="toolbar" aria-label="فیلتر محصولات"><div class="filter-group"><label for="brand-filter">برند</label><select id="brand-filter"><option value="all">همه برندها</option><option value="آدیداس">آدیداس</option><option value="نایک">نایک</option></select></div><div class="filter-group"><label for="sort-select">مرتب‌سازی</label><select id="sort-select"><option value="featured">پیشنهاد ما</option><option value="price-asc">ارزان‌ترین</option><option value="price-desc">گران‌ترین</option><option value="stock-desc">بیشترین موجودی</option></select></div><p id="result-count" class="result-count"></p></section>
+    <section id="product-grid" class="product-grid" aria-live="polite"></section>
+  </main>
+  <aside id="cart-drawer" class="cart-drawer" aria-label="سبد خرید" aria-hidden="true"><div class="drawer-head"><h2>سبد خرید شما</h2><button id="close-cart" class="icon-button" type="button" aria-label="بستن سبد خرید">×</button></div><div id="cart-items" class="cart-items"></div><div class="cart-summary"><div><span>جمع کل</span><strong id="cart-total">۰ تومان</strong></div><button id="checkout-button" class="primary-button" type="button">ادامه خرید</button></div></aside>
+  <div id="drawer-backdrop" class="backdrop hidden"></div>
+  <dialog id="product-dialog" class="modal"><button id="close-product" class="modal-close" type="button" aria-label="بستن">×</button><div id="product-detail"></div></dialog>
+  <dialog id="checkout-dialog" class="modal checkout-modal"><button id="close-checkout" class="modal-close" type="button" aria-label="بستن">×</button><h2>روش پرداخت نمایشی</h2><p class="muted">این مرحله آزمایشی است و هیچ پرداخت واقعی انجام نمی‌شود.</p><div class="payment-options"><label class="payment-option"><input type="radio" name="payment" value="cash" checked><span><b>پرداخت نقدی</b><small id="cash-amount"></small></span></label><label class="payment-option"><input type="radio" name="payment" value="credit"><span><b>خرید اعتباری چهار قسطه</b><small id="credit-amount"></small></span></label></div><div id="installment-plan" class="installment-plan hidden"></div><button id="confirm-order" class="primary-button" type="button">تأیید سفارش نمایشی</button></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div><script src="app.js"></script>
+</body>
+</html>
