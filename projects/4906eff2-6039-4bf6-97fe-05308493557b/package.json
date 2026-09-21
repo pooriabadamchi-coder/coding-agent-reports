@@ -1,0 +1,9 @@
+{
+  "name": "kafshino-static-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "فروشگاه استاتیک کفش ورزشی مردانه",
+  "scripts": {
+    "test": "node --test tests/app.test.js"
+  }
+}
